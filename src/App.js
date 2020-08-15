@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 function App() {
   return (
     <div>
-      Phone Directory
-    </div>
+        Phone Directory
+        <div className="header">
+          Phone Directory
+        </div>
+        <button>Add</button>
+        <div>
+          <span>Name</span><br />
+          <span>Phone</span>
+        </div>
+      </div>
   );
 }
 
