@@ -1,18 +1,39 @@
 import React, { Fragment } from 'react';
 import Header from "./Header"
+import "./App.css"
 
 function App() {
-  let x = 10, y = 20;
+  let subscribers = [
+    {
+      id: 1,
+      name: "Shilpa Bhat",
+      phone: "8888888888"
+    },
+    {
+      id: 2,
+      name: "Srishti Gupta",
+      phone: "9999999999"
+    }
+  ];
   return (
     
     <div>
         <Header/>
-        <button>Add</button>
-        <div>
-          <span>Name</span><br />
-          <span>Phone</span>
+        <div className="component-body-container">
+          <button className="custom-btn add-btn">Add</button>
+          <div className="grid-container heading-container">
+            <span className="grid-item name-heading">Name</span><br />
+            <span className="grid-item phone-heading">Phone</span>
+          </div>
+          {
+            subscribers.map(sub => {
+              return <div key={sub.id} className="grid-container">
+                <span className="grid-item">{sub.name}</span>
+                <span className="grid-item">{sub.phone}</span>
+              </div>
+            })
+          }
         </div>
-        <input type="text" placeholder="value" defaultValue={x+y}></input>
       </div>
   );
 }
